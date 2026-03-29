@@ -3,7 +3,7 @@ const Ticket = ({ ticket }) => {
     ticket;
   const date = new Date(createdAt).toLocaleDateString();
   return (
-    <div className="p-5 bg-white rounded-md space-y-2 shadow-lg flex flex-col">
+    <div className="p-5 bg-white rounded-md space-y-2 shadow-lg flex flex-col cursor-pointer">
       <div className="flex justify-between">
         <h5 className="text-black font-semibold">{title}</h5>
         <h5

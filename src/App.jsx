@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import TicketManagement from "./components/TicketManagement";
+import DashboardSummary from "./components/DashboardSummary";
 
 const fetchTicket = async () => {
   const res = await fetch("/data.json");
@@ -13,7 +14,8 @@ function App() {
   return (
     <div>
       <Navbar />
-      <main className="min-h-[60vh] container mx-auto mt-20 space-y-20">
+      <main className="container mx-auto mt-20 space-y-28">
+        <DashboardSummary></DashboardSummary>
         <Suspense fallback={<div className="flex justify-center items-center">
           <span className="loading loading-bars loading-xl"></span>
         </div>}>

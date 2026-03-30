@@ -13,7 +13,7 @@ const Navbar = () => {
           <li>Blog</li>
           <li>Download</li>
           <li>Contact</li>
-          <button className="btn">+ New Ticket</button>
+          <button className="btn bg-linear-135 via-[#8249EB] from-[#632EE3] to-[#9F62F2] text-white">+ New Ticket</button>
         </ul>
       </div>
       {/* dropdown sm device */}

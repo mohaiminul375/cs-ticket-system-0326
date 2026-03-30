@@ -4,20 +4,24 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import TicketManagement from "./components/TicketManagement";
 import DashboardSummary from "./components/DashboardSummary";
-
+import {ToastContainer} from "react-toastify";
 const fetchTicket = async () => {
   const res = await fetch("/data.json");
   return res.json();
 };
+const ticketPromise = fetchTicket();
 function App() {
   const [taskQueue, setTaskQueue] = useState([]);
-  const ticketPromise = fetchTicket();
-  console.log(taskQueue,'central')
+  const [resolvedTask, setResolvedTask] = useState([]);
+  // console.log(resolvedTask, "central");
   return (
     <div>
       <Navbar />
       <main className="container mx-auto my-20 space-y-28">
-        <DashboardSummary></DashboardSummary>
+        <DashboardSummary
+          resolvedTask={resolvedTask}
+          taskQueue={taskQueue}
+        ></DashboardSummary>
         <Suspense
           fallback={
             <div className="flex justify-center items-center">
@@ -26,12 +30,16 @@ function App() {
           }
         >
           <TicketManagement
-          taskQueue={taskQueue}
-          setTaskQueue={setTaskQueue}
-          ticketPromise={ticketPromise}></TicketManagement>
+            resolvedTask={resolvedTask}
+            setResolvedTask={setResolvedTask}
+            taskQueue={taskQueue}
+            setTaskQueue={setTaskQueue}
+            ticketPromise={ticketPromise}
+          ></TicketManagement>
         </Suspense>
       </main>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

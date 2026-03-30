@@ -2,18 +2,20 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="flex-1">
-        <a className="text-2xl font-bold">CS-Ticket-System</a>
+        <a href="/" className="text-2xl font-bold">CS-Ticket System</a>
       </div>
       <div className="navbar-center"></div>
       <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-5 items-center font-semibold">
+        <ul className="menu menu-horizontal px-1 gap-3 items-center font-semibold">
           <li>Home</li>
           <li>FAQ</li>
           <li>Changelog</li>
           <li>Blog</li>
           <li>Download</li>
           <li>Contact</li>
-          <button className="btn bg-linear-135 via-[#8249EB] from-[#632EE3] to-[#9F62F2] text-white">+ New Ticket</button>
+          <button className="btn bg-linear-135 via-[#8249EB] from-[#632EE3] to-[#9F62F2] text-white">
+            + New Ticket
+          </button>
         </ul>
       </div>
       {/* dropdown sm device */}
@@ -37,25 +39,17 @@ const Navbar = () => {
         </div>
         <ul
           tabIndex="-1"
-          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow right-0"
         >
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <a>Parent</a>
-            <ul className="p-2">
-              <li>
-                <a>Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
+          <li>Home</li>
+          <li>FAQ</li>
+          <li>Changelog</li>
+          <li>Blog</li>
+          <li>Download</li>
+          <li>Contact</li>
+          <button className="btn bg-linear-135 via-[#8249EB] from-[#632EE3] to-[#9F62F2] text-white">
+            + New Ticket
+          </button>
         </ul>
       </div>
     </div>

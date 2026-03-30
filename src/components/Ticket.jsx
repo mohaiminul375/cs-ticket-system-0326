@@ -1,4 +1,5 @@
 import { useState } from "react";
+  import { ToastContainer, toast } from 'react-toastify';
 
 const Ticket = ({ ticket,taskQueue, setTaskQueue }) => {
   const [isSelected,setIsSelected]=useState(false)
@@ -10,6 +11,7 @@ const Ticket = ({ ticket,taskQueue, setTaskQueue }) => {
     console.log(ticketData);
     setTaskQueue([...taskQueue, ticketData]);
     setIsSelected(true)
+        toast.warning('Task has been added to Queue')
   };
   return (
     <div

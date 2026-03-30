@@ -17,7 +17,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <main className="container mx-auto my-20 space-y-28">
+      <main className="container mx-auto my-20 space-y-28 px-2 md:px-0">
         <DashboardSummary
           resolvedTask={resolvedTask}
           taskQueue={taskQueue}

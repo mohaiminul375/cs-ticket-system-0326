@@ -20,7 +20,11 @@ const Ticket = ({ ticket,taskQueue, setTaskQueue }) => {
       className={`p-5 bg-white rounded-md space-y-2 shadow-lg flex flex-col ${isSelected?'cursor-not-allowed':'cursor-pointer'}`}
     >
       <div className="flex justify-between">
-        <h5 className="text-black font-semibold">{title}</h5>
+        <h5 className="text-black font-semibold hidden xl:flex">{title}</h5>
+        <h5 className="text-black font-semibold hidden lg:flex xl:hidden">{title.slice(0,20)}...</h5>
+        <h5 className="text-black font-semibold hidden md:flex lg:hidden">{title.slice(0,29)}...</h5>
+        {/* <h5 className="text-black font-semibold lg:hidden xl:flex">{title}</h5> */}
+        <h5 className="text-black font-semibold md:hidden">{title.slice(0,14)}...</h5>
         <h5
           className={`p-2 rounded-full text-xs ${status === "Open" && "bg-[#B9F8CF] text-[#0B5E06]"} ${status === "In Progress" && "bg-[#F8F3B9] text-[#9C7700]"}`}
         >
@@ -33,11 +37,11 @@ const Ticket = ({ ticket,taskQueue, setTaskQueue }) => {
       <div className="flex-1">
         <p className="text-[#627382] text-base">{description}</p>
       </div>
-      <div className="flex justify-between text-[#627382]">
+      <div className="flex flex-col lg:flex-col md:flex-row xl:flex-row md:justify-between  text-[#627382]">
         <div>
           <span>#{id}</span>
           <span
-            className={`ml-3 ${priority === "High" && "text-red-700"} ${priority === "Medium" && "text-[#FEBB0C]"}`}
+            className={`ml-3 ${priority === "High" && "text-red-700"} ${priority === "Medium" && "text-[#FEBB0C]"} ${priority==="Low" && "text-[#02A53B]"}`}
           >
             {priority}{" "}
           </span>

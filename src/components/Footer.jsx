@@ -6,7 +6,7 @@ import mail from "../assets/mail.png";
 const Footer = () => {
   return (
     <>
-      <footer className=" bg-black p-10">
+      <footer className=" bg-black md:p-10 p-4">
         <div className="footer sm:footer-horizontal text-white  grid-flow-row-dense md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-12 p-0">
           <aside className="md:col-span-4 xl:col-span-4">
             <h2 href="/" className="text-2xl font-bold">
